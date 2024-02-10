@@ -1,110 +1,127 @@
 <!DOCTYPE html>
 <link lang="en">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag Letters </title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag Letters </title>
+<link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
 </head>
 <style>
     body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #ff99cc, #ff6699);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #ff99cc, #ff6699);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
 
-.letter-container {
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+    .letter-container {
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 
-.love-letter p {
-    font-size: 18px;
-    font-family: 'Cursive', sans-serif;
-    color: #333333;
-    line-height: 1.5;
-}
-
-
+    .love-letter p {
+        font-size: 18px;
+        font-family: 'Cursive', sans-serif;
+        color: #333333;
+        line-height: 1.5;
+    }
 
     .love-letter {
-    background: linear-gradient(to bottom, #ffffff, #f5e1e1);
-    border: 2px solid #ff6699;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    cursor: grab;
-    transition: transform 0.02s ease-in-out;
-    text-align: center;
+        background: linear-gradient(to bottom, #ffffff, #f5e1e1);
+        border: 2px solid #ff6699;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 15px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: grab;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 60px;
+    }
 
-}
-.love-letter:active {
-    cursor: grabbing;
-}
+    @media only screen and (max-width: 600px) {
+        .love-letter p {
+            font-size: 12px;
+            font-family: 'Cursive', sans-serif;
+            color: #333333;
+        }
+
+        .love-letter {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            cursor: grab;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 40px;
+        }
+    }
+
+    .love-letter:active {
+        cursor: grabbing;
+    }
+
     .love-letter1 {
         top: -70px;
         right: -120px;
         transform: rotate(-15deg);
         position: absolute;
-        width: 300px;
-    height: 60px;
+
     }
+
     .love-letter2 {
         top: -70px;
         right: -150px;
         transform: rotate(10deg);
         position: absolute;
-        width: 300px;
-    height: 90px;
     }
+
     .love-letter3 {
         top: -70px;
         right: -120px;
         transform: rotate(-5deg);
         position: absolute;
-        width: 300px;
-    height: 90px;
     }
+
     .love-letter4 {
         top: -50px;
         right: -120px;
         transform: rotate(30deg);
         position: absolute;
-        width: 300px;
-    height: 90px;
     }
+
     .love-letter5 {
         top: -70px;
         right: -100px;
         transform: rotate(-22deg);
         position: absolute;
-        width: 300px;
-    height: 110px;
     }
+
     .love-letter6 {
         top: -90px;
         right: -120px;
         transform: rotate(0deg);
         position: absolute;
-        width: 300px;
-    height: 90px;
     }
+
     .love-letter7 {
         top: -70px;
         right: -120px;
         transform: rotate(10deg);
         position: absolute;
-        width: 300px;
-    height: 60px;
     }
-
-    
 </style>
 
 <body>
@@ -116,7 +133,8 @@
             <p>Sorry to bother you if you didn't like this 🥹 </p>
         </div>
         <div class="love-letter5 love-letter" draggable="true">
-            <p>If your heart echoes 'yes' ❤️, <br> Please message me on whatsapp <br> <span style="font-weight: bold;">9372863752</span>.</p>
+            <p>If your heart echoes 'yes' ❤️, <br> Please message me on whatsapp <br> <span
+                    style="font-weight: bold;">9372863752</span>.</p>
         </div>
         <div class="love-letter4 love-letter" draggable="true">
             <p>May I invite you for a date with me? 😚</p>
@@ -165,7 +183,7 @@
         document.addEventListener('drop', e => {
             e.preventDefault();
         });
-        
+
     });
 </script>
 
