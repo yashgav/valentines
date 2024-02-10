@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<link lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag Letters </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff99cc, #ff6699);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.letter-container {
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.love-letter p {
+    font-size: 18px;
+    font-family: 'Cursive', sans-serif;
+    color: #333333;
+    line-height: 1.5;
+}
+
+
+
+    .love-letter {
+    background: linear-gradient(to bottom, #ffffff, #f5e1e1);
+    border: 2px solid #ff6699;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    transition: transform 0.02s ease-in-out;
+    text-align: center;
+
+}
+.love-letter:active {
+    cursor: grabbing;
+}
+    .love-letter1 {
+        top: -70px;
+        right: -120px;
+        transform: rotate(-15deg);
+        position: absolute;
+        width: 300px;
+    height: 60px;
+    }
+    .love-letter2 {
+        top: -70px;
+        right: -150px;
+        transform: rotate(10deg);
+        position: absolute;
+        width: 300px;
+    height: 90px;
+    }
+    .love-letter3 {
+        top: -70px;
+        right: -120px;
+        transform: rotate(-5deg);
+        position: absolute;
+        width: 300px;
+    height: 90px;
+    }
+    .love-letter4 {
+        top: -50px;
+        right: -120px;
+        transform: rotate(30deg);
+        position: absolute;
+        width: 300px;
+    height: 90px;
+    }
+    .love-letter5 {
+        top: -70px;
+        right: -100px;
+        transform: rotate(-22deg);
+        position: absolute;
+        width: 300px;
+    height: 110px;
+    }
+    .love-letter6 {
+        top: -90px;
+        right: -120px;
+        transform: rotate(0deg);
+        position: absolute;
+        width: 300px;
+    height: 90px;
+    }
+    .love-letter7 {
+        top: -70px;
+        right: -120px;
+        transform: rotate(10deg);
+        position: absolute;
+        width: 300px;
+    height: 60px;
+    }
+
+    
+</style>
+
+<body>
+    <div id="letter-container" class="letter-container">
+        <div class="love-letter7 love-letter" draggable="true">
+            <p>Btw... My name is Yash 😉 </p>
+        </div>
+        <div class="love-letter6 love-letter" draggable="true">
+            <p>Sorry to bother you if you didn't like this 🥹 </p>
+        </div>
+        <div class="love-letter5 love-letter" draggable="true">
+            <p>If your heart echoes 'yes' ❤️, <br> Please message me on whatsapp <br> <span style="font-weight: bold;">9372863752</span>.</p>
+        </div>
+        <div class="love-letter4 love-letter" draggable="true">
+            <p>May I invite you for a date with me? 😚</p>
+        </div>
+        <div class="love-letter3 love-letter" draggable="true">
+            <p>I just want to tell you 👉👈... <br> I love you💖</p>
+        </div>
+        <div class="love-letter2 love-letter" draggable="true">
+            <p>Hello, your smile just brightens my world 🥰😍</p>
+        </div>
+        <div class="love-letter1 love-letter" draggable="true">
+            <p>Drag these letters 💌, please 😻</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<!-- Add this to the head of your HTML file to include the Dragabilly library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/draggabilly/2.3.0/draggabilly.pkgd.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loveLetters = document.querySelectorAll('.love-letter');
+
+        let draggie;
+
+        loveLetters.forEach(letter => {
+            draggie = new Draggabilly(letter, {
+                // You can customize drag options here if needed
+            });
+
+            draggie.on('dragStart', () => {
+                letter.style.opacity = '0.5';
+            });
+
+            draggie.on('dragEnd', () => {
+                letter.style.opacity = '1';
+            });
+        });
+
+        // Prevent the default dragover and drop behaviors
+        document.addEventListener('dragover', e => {
+            e.preventDefault();
+        });
+
+        document.addEventListener('drop', e => {
+            e.preventDefault();
+        });
+        
+    });
+</script>
+
+</html>
